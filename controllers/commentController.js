@@ -16,7 +16,7 @@ exports.createComment=async(req, res)=>{
         //OR
         const comment = new Comment({
             post, user, body
-        });
+        }); 
 
 
         //save the new comment into the database
