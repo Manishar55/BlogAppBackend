@@ -5,13 +5,14 @@ const mongoose= require("mongoose");
 
 //route handler
 const likeSchema = new mongoose.Schema({
+
     //like in which post?
     post: {
         type: mongoose.Schema.Types.ObjectId, //id
-        ref: "post", //this is the reference to the post model
+        ref: "Post", //this is the reference to the post model
     },
 
-    //who is liking?
+    //who is liked
     user:{
         type: String,
         required: true,

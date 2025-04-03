@@ -6,27 +6,31 @@ const mongoose= require("mongoose");
 
 //route handler
 const postSchema = new mongoose.Schema({
-
+    
+    //title of the post
     title:{
         type: String,
         required: true,
     },
 
+    //content of the post
     body:{
         type: String,
         required: true,
     },
 
-    likes:{
-        type: mongoose.Schema.Types.ObjectId, //id
-        ref:"Like",
-    },
+   //likes of the post
+    likes: [{ 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Like",
+    }],
 
-    comment:{
-        type: mongoose.Schema.Types.ObjectId, //id
-        ref:"Comment",
-    }
-    
+    //comments of the post
+    comments: [{  
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Comment",
+    }]
+        
 });
 
 //export 

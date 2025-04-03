@@ -10,7 +10,7 @@ const commentSchema = new mongoose.Schema({
     post: {
         //jab v kisi aur model ko kisi aur object ko refer karte h uski id k through then we need write like this
         type: mongoose.Schema.Types.ObjectId, //id
-        ref: "post", //this is the reference to the post model
+        ref: "Post", //this is the reference to the post model
     },
 
     //who is commenting?
