@@ -10,13 +10,14 @@ exports.createComment=async(req, res)=>{
     try{
         //fetch data from req body
         const{post, user, body}=req.body;
-
+        
         //create a new comment object
-        // const comment = new Comment({
-        //     post, user, body
-        // });
+        // const comment=await Comment.create({post, user, body});
+        //OR
+        const comment = new Comment({
+            post, user, body
+        });
 
-        const comment=await Comment.create({post, user, body});
 
         //save the new comment into the database
         const savedComment= await comment.save();
